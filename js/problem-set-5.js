@@ -26,7 +26,15 @@ function mario() {
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
-  
+  for (var i = 1; i <= height; i++) {
+   var row = '';
+
+   for (var j = 1; j <= i; j++) {
+     row += '*';
+   }
+
+   document.getElementById(`mario-easy-output`).innerHTML =
+   `var`
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
