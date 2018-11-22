@@ -40,7 +40,7 @@ function mario() {
     steps += '#';
   }
 
-  document.getElementById('mario-easy-output').innerHTML = (steps);
+  document.getElementById('mario-easy-output').innerHTML = (steps );
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
