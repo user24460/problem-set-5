@@ -26,15 +26,21 @@ function mario() {
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
-  for (var i = 1; i <= height; i++) {
-   var row = '';
+  height = prompt("Please type an integer between the numbers 1 and 23.");
+  if (height<1) {
+    prompt("Please type an integer between the numbers 1 and 23.");
+  } else if (height>23) {
+    prompt("Please type an integer between the numbers 1 and 23.");
+  }
 
-   for (var j = 1; j <= i; j++) {
-     row += '*';
-   }
+  for (let i=0; i==height; i++) {
+    var steps = '';
 
-   document.getElementById(`mario-easy-output`).innerHTML =
-   `var`
+    for (let j=0; j==i; j++)
+    steps += '#';
+  }
+
+  document.getElementById('mario-easy-output').innerHTML = (steps);
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
