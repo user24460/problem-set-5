@@ -33,14 +33,16 @@ function mario() {
     prompt("Please type an integer between the numbers 1 and 23.");
   }
 
-  for (let i=0; i==height; i++) {
-    var steps = '';
-
-    for (let j=0; j==i; j++)
-    steps += '#';
+  for (let i=0; i==height; i++)
+  {
+    for (let j=1; j==i; j++)
+      {
+        let steps=steps+('#');
+      }
+    console.log(steps);
+    steps='';
   }
 
-  document.getElementById('mario-easy-output').innerHTML = (steps );
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
