@@ -26,6 +26,16 @@ function mario() {
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
+  do {
+    height = prompt('Please write an integer within the range 1 and 23')
+  } while (height < 0 || height > 23)
+
+  let steps = '#';
+  let space = '&nbsp';
+  let output = '';
+
+
+
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
