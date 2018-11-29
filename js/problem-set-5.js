@@ -26,24 +26,6 @@ function mario() {
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
-  height = prompt("Please type an integer between the numbers 1 and 23.");
-  if (height<1) {
-    prompt("Please type an integer between the numbers 1 and 23.");
-  } else if (height>23) {
-    prompt("Please type an integer between the numbers 1 and 23.");
-  }
-
-  for (let i=0; i==height; i++)
-  {
-    for (let j=1; j==i; j++)
-      {
-        let steps=steps+('#');
-      }
-    console.log(steps);
-    steps='';
-  }
-
-
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
@@ -205,6 +187,40 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
+
+
+  windspeed = prompt('Please enter a non-negative integer to represent windspeed.');
+  windspeed = parseInt(windspeed);
+  while (windspeed < 0){
+    windspeed = prompt('Please enter a non-negative integer.');
+    windspeed = parseInt(windspeed);
+  }
+  while (Number.isInteger(windspeed) == false){
+    windspeed = prompt('Please enter a non-negative integer.');
+    windspeed = parseInt(windspeed);
+  }
+
+  if(windspeed < 39){
+    document.getElementById("hurricane-output").innerHTML = "The skies are calm..."
+  }
+  if(windspeed >= 39 && windspeed <= 73){
+    document.getElementById("hurricane-output").innerHTML = "Tropical Storm."
+  }
+  if(windspeed >= 74 && windspeed <= 95){
+    document.getElementById("hurricane-output").innerHTML = "Category 1 Hurricane."
+  }
+  if(windspeed >= 96 && windspeed <= 110){
+    document.getElementById("hurricane-output").innerHTML = "Category 2 Hurricane."
+  }
+  if(windspeed >= 111 && windspeed <= 129){
+    document.getElementById("hurricane-output").innerHTML = "Category 3 Hurricane."
+  }
+  if(windspeed >= 130 && windspeed <= 156){
+    document.getElementById("hurricane-output").innerHTML = "Category 4 Hurricane."
+  }
+  if(windspeed >157){
+    document.getElementById("hurricane-output").innerHTML = "Category 5 Hurricane."
+  }
 
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
