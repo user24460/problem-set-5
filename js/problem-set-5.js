@@ -341,6 +341,7 @@ function gymnastics() {
      score6 = Number(prompt("Please input a score between 0.0 and 10.0"))
    } while (score6 < 0.0 || height > 10.0 || height%1 !=0);
    scores.push(score6);
+   
 
 
   /////////////////////////////// DO NOT MODIFY
