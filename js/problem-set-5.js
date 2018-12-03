@@ -25,16 +25,28 @@ function mario() {
   ////////////// DO NOT MODIFY
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
-
+  height = -1;
   do {
-    height = prompt('Please write an integer within the range 1 and 23')
-  } while (height < 0 || height > 23)
+    height = Number(prompt('Please write an integer within the range 1 and 23'));
+  } while (height < 0 || height > 23 || height%1 !=0)
 
+  let p = document.getElementById("mario-easy-output");
   let steps = '#';
   let space = '&nbsp';
-  let output = '';
+  let output = '<code>';
 
-
+  for (let a = 0; a < height; a++){
+    for (let b = 0; b < height - (a + 1); b++) {
+      output = output + space;
+    }
+    for (let c = 0; c < a + 2; c++) {
+      output = output + steps;
+    }
+    output = output + "</br>";
+  }
+  output = output + "</code>";
+  p.innerHTML = `${output}`;
+  console.log (typeof height);
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
@@ -69,7 +81,30 @@ function marioAgain() {
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 2 CODE HERE
+  height = -1;
+  do {
+    height = Number(prompt('Please write an integer within the range 1 and 23'));
+  } while (height < 0 || height > 23 || height%1 !=0)
+
+  let p = document.getElementById("mario-hard-output");
+  let steps = '#';
+  let space = '&nbsp';
+  let output = '<code>';
+
+  for (let a = 0; a < height; a++){
+    for (let b = 0; b < height - (a + 1); b++) {
+      output = output + space;
+    }
+    for (let c = 0; c < a + 2; c++) {
+      output = output + steps;
+    }
+    output = output + "</br>";
+  }
+
+  for (let a )
+  output = output + "</code>";
+  p.innerHTML = `${output}`;
+  console.log (typeof height);
 
   //////////////////////////////// DO NOT MODIFY
   check('mario-again', height); // DO NOT MODIFY
