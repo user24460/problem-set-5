@@ -311,6 +311,38 @@ function gymnastics() {
    *       scores.push(secondScore);  // will likely be different than mine
    */
 
+   let score1 = "";
+   do {
+     score1 = Number(prompt("Please input a score between 0.0 and 10.0"))
+   } while (score1 < 0.0 || height > 10.0 || height%1 !=0);
+   scores.push(score1);
+   let score2 = "";
+   do {
+     score2 = Number(prompt("Please input a score between 0.0 and 10.0"))
+   } while (score2 < 0.0 || height > 10.0 || height%1 !=0);
+   scores.push(score2);
+   let score3 = "";
+   do {
+     score3 = Number(prompt("Please input a score between 0.0 and 10.0"))
+   } while (score3 < 0.0 || height > 10.0 || height%1 !=0);
+   scores.push(score3);
+   let score4 = "";
+   do {
+     score4 = Number(prompt("Please input a score between 0.0 and 10.0"))
+   } while (score4 < 0.0 || height > 10.0 || height%1 !=0);
+   scores.push(score4);
+   let score5 = "";
+   do {
+     score5 = Number(prompt("Please input a score between 0.0 and 10.0"))
+   } while (score5 < 0.0 || height > 10.0 || height%1 !=0);
+   scores.push(score5);
+   let score6 = "";
+   do {
+     score6 = Number(prompt("Please input a score between 0.0 and 10.0"))
+   } while (score6 < 0.0 || height > 10.0 || height%1 !=0);
+   scores.push(score6);
+
+
   /////////////////////////////// DO NOT MODIFY
   check('gymnastics', scores); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
