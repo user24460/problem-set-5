@@ -88,20 +88,21 @@ function marioAgain() {
 
   let p = document.getElementById("mario-hard-output");
   let steps = '#';
-  let space = '&nbsp';
   let output = '<code>';
 
   for (let a = 0; a < height; a++){
     for (let b = 0; b < height - (a + 1); b++) {
-      output = output + space;
+      output = output + '&nbsp';
     }
     for (let c = 0; c < a + 2; c++) {
       output = output + steps;
     }
+    output = output+`&nbsp;&nbsp;${steps}`;
+    for (let e = 0; e < a + 1; e++) {
+      output = output + steps;
+    }
     output = output + "</br>";
   }
-
-  for (let a )
   output = output + "</code>";
   p.innerHTML = `${output}`;
   console.log (typeof height);
