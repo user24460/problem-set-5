@@ -158,7 +158,7 @@ function credit() {
   let card; // DO NOT MODIFY
   //////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 3 CODE HERE
+
 
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
@@ -311,39 +311,23 @@ function gymnastics() {
    *       scores.push(secondScore);  // will likely be different than mine
    */
 
-   let score1 = "";
-   do {
-     score1 = Number(prompt("Please input a score between 0.0 and 10.0"))
-   } while (score1 < 0.0 || height > 10.0 || height%1 !=0);
-   scores.push(score1);
-   let score2 = "";
-   do {
-     score2 = Number(prompt("Please input a score between 0.0 and 10.0"))
-   } while (score2 < 0.0 || height > 10.0 || height%1 !=0);
-   scores.push(score2);
-   let score3 = "";
-   do {
-     score3 = Number(prompt("Please input a score between 0.0 and 10.0"))
-   } while (score3 < 0.0 || height > 10.0 || height%1 !=0);
-   scores.push(score3);
-   let score4 = "";
-   do {
-     score4 = Number(prompt("Please input a score between 0.0 and 10.0"))
-   } while (score4 < 0.0 || height > 10.0 || height%1 !=0);
-   scores.push(score4);
-   let score5 = "";
-   do {
-     score5 = Number(prompt("Please input a score between 0.0 and 10.0"))
-   } while (score5 < 0.0 || height > 10.0 || height%1 !=0);
-   scores.push(score5);
-   let score6 = "";
-   do {
-     score6 = Number(prompt("Please input a score between 0.0 and 10.0"))
-   } while (score6 < 0.0 || height > 10.0 || height%1 !=0);
-   scores.push(score6);
-   
-
-
+  let i=0;
+   while(i<=5){
+     let inputScore=prompt("Input your score");
+     if(inputScore>=1 && inputScore<=10 && Number.isInteger(Number(inputScore))){
+       scores.push(inputScore);
+       i++;
+     }
+   }
+   let newList = [];
+   scores.sort(function(a,b){return a-b;})
+   let max=scores[5];
+   let min=scores[0];
+   for(j=1;j<5;j++){
+     newList.push(scores[j])
+   }
+   averageScore=(Number(newList[0])+Number(newList[1])+Number(newList[2])+Number(newList[3]))/4;
+   document.getElementById("gymnastics-output").innerHTML="Discarded: "+min+", "+max+"</br>Score: "+averageScore;
   /////////////////////////////// DO NOT MODIFY
   check('gymnastics', scores); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
