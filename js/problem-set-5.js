@@ -158,14 +158,64 @@ function credit() {
   let card; // DO NOT MODIFY
   //////////// DO NOT MODIFY
 
-
-
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
    *       variable, do not modify it. If you find it necessary to manipulate
    *       this value, you will need to create a second variable to serve
    *       as a copy of the 'card' variable.
    */
+
+   let p = document.getElementById("credit-output");
+   let creditCardSequence1 = 0;
+   let creditCardSequence2 = 0;
+
+   while(true) {
+     card = prompt("Please enter a valid credit-card number from American Express, Mastercard, or Visa.");
+     if (Number.isInteger(Number(card))){
+       break;
+     }
+     if(card === null){
+       break;
+     }
+   }
+
+   if (card !== null) {
+     for(let a = card.length-2; a >= 0; a-=2) {
+       let number = Number(card[a]) * 2;
+       let numberString = number.toString();
+       let numberSum = 0;
+       for (let b = 0 ; b < numberString.length; b++){
+         numberSum = numberSum + Number(numberString[b]);
+       }
+       creditCardSequence1 = numberSum + creditCardSequence1;
+       console.log(creditCardSequence1);
+     }
+
+     for(let c = card.length-1; c >= 0; c -= 2){
+       creditCardSequence2 = creditCardSequence2 + Number(card[c])
+     }
+
+     console.log(creditCardSequence2);
+
+     if (card.length == 15 && (card[0] == 3 &&(card[1] == 7 || card[1] == 4))
+     && (creditCardSequence1 + creditCardSequence2 )% 10 == 0){
+       p.innerHTML="<img src ='./images/amex.png'/>";
+     }
+     else if ((card.length == 13 || card.length == 16) && card[0] == 4 &&
+     (creditCardSequence1 + creditCardSequence2) % 10 == 0){
+       p.innerHTML="<img src ='./images/visa.png'/>";
+     }
+     else if (card.length == 16 && (card[0] == 5 && (card[1] == 1 ||
+       card[1] == 2 || card[1] == 4 || card[1] == 5)) && (creditCardSequence1 + creditCardSequence2) % 10 == 0){
+       p.innerHTML="<img src ='./images/mastercard.png'/>";
+     }
+     else {
+       p.innerHTML="<img src ='./images/invalid.png'/>";
+     }
+     card = Number(card);
+   } else {
+     document.getElementById("credit-output").innerHTML = "";
+   }
 
   ///////////////////////// DO NOT MODIFY
   check('credit', card); // DO NOT MODIFY
