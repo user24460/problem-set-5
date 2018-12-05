@@ -346,8 +346,9 @@ function gymnastics() {
    let average = (Total - Math.max(score1, score2, score3, score4, score5, score6)
    - Math.min(score1, score2, score3, score4, score5, score6)) / 4;
    let p = document.getElementById('gymnastics-output');
-   p.innerHTML = 'Discarded: ' + Math.min(score1, score2, score3, score4, score5, score6)
-   + ', ' + Math.max(score1, score2, score3, score4, score5, score6) + '<br />Score: ' + average.toFixed(2);
+   p.innerHTML = 'Discarded: '+Math.min(score1, score2, score3, score4, score5, score6)
+   +', '+ Math.max(score1, score2, score3, score4, score5, score6)+'<br />Score: '+average.toFixed(2);
+
   /////////////////////////////// DO NOT MODIFY
   check('gymnastics', scores); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
@@ -399,6 +400,48 @@ function reportCard() {
    *       representative of the number of tests, quizzes, and homework
    *       grades the user enters, respectively.
    */
+
+   while(true) {
+		let testScores = prompt("Please enter test scores from 0 to 100; type -1 to move on to the next category.");
+		if(testScores == -1){
+			break;
+		}
+		if(Number(testScores >= 0) && Number(testScores <= 100)){
+			testTotal = Number(testScores) + testTotal;
+			tests++;
+		}
+	}
+
+	while(true) {
+		let quizScores = prompt("Please enter quiz scores from 0 to 100; type -1 to move on to the next category.");
+		if (quizScores == -1){
+			break;
+		}
+		if(Number(quizScores >= 0) && Number(quizScores <= 100)){
+			quizTotal = Number(quizScores) + quizTotal;
+			quizzes++;
+		}
+	}
+
+	while(true) {
+		let homeworkScores = prompt("Please enter homework scores from 0 to 100; type -1 to move on.");
+		if (homeworkScores == -1){
+			break;
+		}
+		if(Number(homeworkScores >= 0) && Number(homeworkScores <= 100)){
+			homeworkTotal = Number(homeworkScores) + homeworkTotal;
+			homeworks++;
+		}
+	}
+
+	let testAverage = (testTotal / tests).toFixed(2);
+	let quizAverage = (quizTotal / quizzes).toFixed(2);
+	let homeworkAverage = (homeworkTotal/homeworks).toFixed(2);
+	grade=((testAverage*0.6)+(quizAverage*0.3)+(homeworkAverage*0.1)).toFixed(2);
+	var p = document.getElementById("report-card-output");
+  p.innerHTML="Tests: "+testAverage+"</br>Quizzes: "+quizAverage+"</br>Homework: "
+  +homeworkAverage+"</br>Grade: "+grade;
+
 
   /////////////////////// DO NOT MODIFY
   check('report-card', // DO NOT MODIFY
