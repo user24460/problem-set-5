@@ -197,7 +197,36 @@ function credit() {
 
 function guess() {
 
-  // WRITE YOUR EXERCISE 4 CODE HERE
+  let generatedNumber = Math.floor(Math.random() * (999)) + 1;
+  let userInput;
+  let userAttempts = 0;
+
+    do {
+      userInput = prompt('Guess a number from 1 to 1000; hints will be provided to you.');
+      userInput = parseFloat(userInput);
+
+      if (isNaN(userInput) || userInput < 1 || userInput > 1000 || Number.isInteger(userInput) == false) {
+        document.getElementById("guess-output").innerHTML = 'Guesses must be between 1 to 1000. Please try again.';
+        continue;
+      }
+
+      userAttempts++;
+
+      if (userInput > generatedNumber){
+        alert('Sorry, you guessed incorrectly. Perhaps try going lower.');
+        continue;
+      }
+
+      if (userInput < generatedNumber) {
+        alert('Sorry, you guessed incorrectly. Perhaps try going higher.');
+        continue;
+      }
+
+    } while (userInput !== generatedNumber);
+
+    let p = document.getElementById("guess-output");
+    p.innerHTML = ('Congratulations! You guessed '+generatedNumber+' in '+userAttempts+' attempts. You have wonderful deduction skills.');
+
 
   ////////////////// DO NOT MODIFY
   check('guess'); // DO NOT MODIFY
